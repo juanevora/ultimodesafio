@@ -1,65 +1,64 @@
 .dashboard-container {
-    background-color: #b80f0f;
-    padding: 20px;
-    border-radius: 5px;
+  background-color: #0a0a0a;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.metric {
+  margin-bottom: 10px;
+}
+
+.metric-label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.metric-value {
+  font-size: 24px;
+}
+
+/* Media queries */
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 10px;
   }
-  
-  .metric {
-    margin-bottom: 10px;
-  }
-  
+
   .metric-label {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
   }
-  
+
   .metric-value {
+    font-size: 20px;
+  }
+}
+
+/* Estilos para pantallas medianas (tabletas) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .dashboard-container {
+    padding: 30px;
+  }
+
+  .metric-label {
+    font-size: 20px;
+  }
+
+  .metric-value {
+    font-size: 28px;
+  }
+}
+
+/* Estilos para pantallas grandes (escritorio) */
+@media (min-width: 1024px) {
+  .dashboard-container {
+    padding: 50px;
+  }
+
+  .metric-label {
     font-size: 24px;
   }
-  
-  /* Media queries */
-  /* Estilos para pantallas pequeñas (móviles) */
-  @media (max-width: 768px) {
-    .dashboard-container {
-      padding: 10px;
-    }
-    
-    .metric-label {
-      font-size: 16px;
-    }
-    
-    .metric-value {
-      font-size: 20px;
-    }
+
+  .metric-value {
+    font-size: 32px;
   }
-  
-  /* Estilos para pantallas medianas (tabletas) */
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .dashboard-container {
-      padding: 30px;
-    }
-    
-    .metric-label {
-      font-size: 20px;
-    }
-    
-    .metric-value {
-      font-size: 28px;
-    }
-  }
-  
-  /* Estilos para pantallas grandes (escritorio) */
-  @media (min-width: 1024px) {
-    .dashboard-container {
-      padding: 50px;
-    }
-    
-    .metric-label {
-      font-size: 24px;
-    }
-    
-    .metric-value {
-      font-size: 32px;
-    }
-  }
-  
+}

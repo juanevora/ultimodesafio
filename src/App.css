@@ -1,42 +1,71 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* App.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.metric {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.metric-label {
+  font-weight: bold;
+  margin-right: 10px;
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.metric-value {
+  font-size: 24px;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
+.loading-indicator {
+  margin-left: 10px;
+  font-style: italic;
   color: #888;
+}
+
+.error-message {
+  color: red;
+}
+
+/* Estilos para dispositivos móviles */
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .metric {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+  
+  .metric-label {
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  .metric-value {
+    font-size: 20px;
+  }
 }
