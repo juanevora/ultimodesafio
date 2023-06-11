@@ -1,37 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const AveragePrice = () => {
+const AveragePriceMetric = () => {
   const [averagePrice, setAveragePrice] = useState(0);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await axios.get('https://fakestoreapi.com/products');
-        const products = response.data;
-        const totalPrices = products.reduce((total, product) => total + product.price, 0);
-        const average = totalPrices / products.length;
-        setAveragePrice(average);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
+    fetch('https://fakestoreapi.com/products')
+      .then((response) => response.json())
+      .then((data) => {
+        const productPrices = data.map((product) => product.price);
+        const totalPrice = productPrices.reduce((acc, price) => acc + price, 0);
+        setAveragePrice(totalPrice / data.length);
+      })
+      .catch((error) => {
+        console.error('Error al obtener los productos:', error);
+      });
   }, []);
 
   return (
     <div>
-      {loading ? (
-        <p>Cargando...</p>
-      ) : (
-        <p>Precio promedio de los productos: ${averagePrice.toFixed(2)}</p>
-      )}
+      <h3>Precio promedio de los productos</h3>
+      <p>{`$${averagePrice.toFixed(2)}`}</p>
     </div>
   );
 };
 
-export default AveragePrice;
+export default AveragePriceMetric;

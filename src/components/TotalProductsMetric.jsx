@@ -1,34 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const TotalProducts = () => {
+const TotalProductsMetric = () => {
   const [totalProducts, setTotalProducts] = useState(0);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchTotalProducts = async () => {
-      try {
-        const response = await axios.get('https://fakestoreapi.com/products');
-        setTotalProducts(response.data.length);
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-        setLoading(false);
-      }
-    };
-
-    fetchTotalProducts();
+    fetch('https://fakestoreapi.com/products')
+      .then((response) => response.json())
+      .then((data) => {
+        setTotalProducts(data.length);
+      })
+      .catch((error) => {
+        console.error('Error al obtener los productos:', error);
+      });
   }, []);
 
   return (
     <div>
-      {loading ? (
-        <p>Cargando...</p>
-      ) : (
-        <p>Número total de productos: {totalProducts}</p>
-      )}
+      <h3>Número total de productos</h3>
+      <p>{totalProducts}</p>
     </div>
   );
 };
 
-export default TotalProducts;
+export default TotalProductsMetric;

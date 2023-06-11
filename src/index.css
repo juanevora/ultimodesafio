@@ -1,24 +1,17 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: rgb(201, 11, 11);
-  color: rgba(255, 255, 255, 0.87);
-  background-image: linear-gradient(to bottom, #04b7c4, #7a0b7a);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: none;
-}
-a:hover {
-  color: #535bf2;
+  --primary-color: #04b7c4;
+  --secondary-color: #7a0b7a;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --link-color: #646cff;
+  --link-hover-color: #535bf2;
+  --button-color: #b11919;
+  --button-hover-color: #646cff;
+  --button-focus-color: -webkit-focus-ring-color;
+  --body-background-light: #971b1b;
+  --body-background-dark: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  --text-color-light: #213547;
+  --link-hover-color-light: #747bff;
+  --button-color-light: #a30f0f;
 }
 
 body {
@@ -28,6 +21,27 @@ body {
   align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--body-background-dark);
+  background-image: var(--body-background-dark);
+  color: var(--text-color);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
 }
 
 h1 {
@@ -37,35 +51,32 @@ h1 {
   margin-bottom: 1.5em;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1.2em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Media queries para adaptabilidad */
+@media (max-width: 600px) {
+  .dashboard-container {
+    padding: 10px;
   }
-  a:hover {
-    color: #747bff;
+
+  .metric-value {
+    font-size: 18px;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .product-list-item {
+    font-size: 14px;
   }
 }
 
+@media (max-width: 400px) {
+  .dashboard-container {
+    padding: 5px;
+  }
+
+  .metric-value {
+    font-size: 16px;
+  }
+
+  .product-list-item {
+    font-size: 12px;
+  }
+}
