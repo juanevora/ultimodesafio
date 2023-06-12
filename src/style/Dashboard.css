@@ -29,7 +29,7 @@
 }
 
 .product-list-item {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .sort-option {
@@ -37,36 +37,45 @@
 }
 
 .chart-container {
-  margin-top: 40px;
-  text-align: center;
-  padding-bottom: 40px; /* Ajusta el espacio inferior */
-  background: rgba(255, 255, 255, 0.233);
-  background-size: auto;
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
 }
 
 .chart-header {
-  margin-bottom: 10px;
+  text-align: center;
 }
 
-.chart {
-  display: inline-block;
+.victory-bar.custom-chart-bars {
+  fill: #7ad412 !important; /* Color de las barras */
 }
 
-.victory-bar {
-  fill: lightblue; /* Cambia el color de la barra a un azul claro */
-}
-
-.victory-label {
-  fill: white; /* Cambia el color del texto a blanco */
-  text-anchor: middle; /* Centra el texto horizontalmente */
-  
+.victory-bar.custom-chart-bars:hover {
+  fill: #ffffff !important; /* Color de las barras al pasar el mouse */
 }
 
 
-/* Media queries para adaptabilidad */
+
+.chart text {
+  font-size: 12px;
+  fill: #ffffff; /* Color del texto */
+  text-anchor: start;
+}
+
+/* Adaptabilidad para toda la página */
 @media (max-width: 600px) {
   .dashboard-container {
+    max-width: 100%;
     padding: 10px;
+  }
+
+  .metric {
+    margin-bottom: 10px;
+  }
+
+  .chart-container {
+    width: 100%;
+    height: 200px;
   }
 
   .metric-value {
@@ -89,5 +98,9 @@
 
   .product-list-item {
     font-size: 12px;
+  }
+
+  .chart-container {
+    height: 150px;
   }
 }

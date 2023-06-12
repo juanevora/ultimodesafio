@@ -93,9 +93,17 @@ const Dashboard = () => {
     }
   }, [sortOption]);
 
+  // Acortar el título del producto a un número determinado de caracteres
+  const truncateString = (str, maxLength) => {
+    if (str.length > maxLength) {
+      return str.substring(0, maxLength - 3) + '...';
+    }
+    return str;
+  };
+
   // Obtener los datos para el gráfico de barras
   const barChartData = topSellingProducts.map((product) => ({
-    x: product.title,
+    x: truncateString(product.title, 20), // Acortar el título a 20 caracteres
     y: product.rating.count,
   }));
 
@@ -133,9 +141,25 @@ const Dashboard = () => {
   <VictoryChart domainPadding={20}>
     <VictoryAxis />
     <VictoryAxis dependentAxis />
-    <VictoryBar data={barChartData} x="x" y="y" className="chart" />
+    <VictoryBar
+      data={barChartData}
+      x="x"
+      y="y"
+      style={{
+        data: {
+          fill: '#7ad412', // Color de las barras
+        },
+        labels: {
+          fontSize: 5,
+          fill: '#ffffff', // Color de las etiquetas
+        },
+        // Ajusta el espaciado entre las barras
+        barWidth: 50, // Cambia este valor según tus preferencias
+      }}
+    />
   </VictoryChart>
 </div>
+
 
 
       <Footer />

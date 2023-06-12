@@ -1,82 +1,29 @@
-:root {
-  --primary-color: #04b7c4;
-  --secondary-color: #7a0b7a;
-  --text-color: rgba(255, 255, 255, 0.87);
-  --link-color: #646cff;
-  --link-hover-color: #535bf2;
-  --button-color: #b11919;
-  --button-hover-color: #646cff;
-  --button-focus-color: -webkit-focus-ring-color;
-  --body-background-light: #971b1b;
-  --body-background-dark: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-  --text-color-light: #213547;
-  --link-hover-color-light: #747bff;
-  --button-color-light: #a30f0f;
-}
-
 body {
-  margin: 0;
+  margin: 2em;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-width: 320px;
+  align-items: auto;
+  min-width: 50px;
   min-height: 100vh;
-  background-color: var(--body-background-dark);
-  background-image: var(--body-background-dark);
-  color: var(--text-color);
+  background: linear-gradient(135deg, #04b7c4, #7a0b7a);
+  color: #fff;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--link-hover-color);
-}
-
-h1 {
-  font-size: 2.8em;
-  line-height: 1.2;
+  line-height: 1;
+  font-weight: 10;
+  font-size: 1.5em;
   text-align: center;
-  margin-bottom: 1.5em;
 }
 
-
-/* Media queries para adaptabilidad */
-@media (max-width: 600px) {
-  .dashboard-container {
-    padding: 10px;
-  }
-
-  .metric-value {
-    font-size: 18px;
-  }
-
-  .product-list-item {
-    font-size: 14px;
+@media (max-width: 768px) {
+  body {
+    margin: 1em;
+    font-size: 1.2em;
   }
 }
 
-@media (max-width: 400px) {
-  .dashboard-container {
-    padding: 5px;
-  }
-
-  .metric-value {
-    font-size: 16px;
-  }
-
-  .product-list-item {
-    font-size: 12px;
+@media (max-width: 480px) {
+  body {
+    margin: 0.5em;
+    font-size: 1em;
   }
 }
